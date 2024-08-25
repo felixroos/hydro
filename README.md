@@ -123,8 +123,8 @@ Here's a feature list anyway (based on [Hydra Functions](https://hydra.ojack.xyz
 
 ### Array
 
-- [ ] fast
-- [ ] smooth
-- [ ] ease
-- [ ] offset
-- [ ] fit
+- [x] fast
+- [x] smooth
+- [x] ease
+- [x] offset
+- [x] fit
