@@ -6,7 +6,9 @@ live at [felixroos.github.io/hydro](https://felixroos.github.io/hydro/)
 
 ## Examples
 
-To load a random example, open the browser console and enter `shuffle()`.
+- To load a random example, open the browser console and enter `shuffle()`.
+- To load a specific example, open the browser console and enter `example(index)`, where `index` is between 0 and 57.
+
 You can also load some of my own examples:
 
 - [dragon tails](https://felixroos.github.io/hydro/#c2hhcGUoMiwgKCkgPT4gTWF0aC5zaW4odGltZSkvNCsuMjUsIC41KQoucmVwZWF0KDEsNSkKLmNvbG9yKC42LDAsLjgpCi5tb2R1bGF0ZShub2lzZSgyLC4zKSwuMDUpCi8vLm1vZHVsYXRlUm90YXRlKG5vaXNlKDEwLC4zKSwuMikKLnJvdGF0ZSgxLjUsMC4xKQouY29sb3JhbWEoKQouZGlmZihvMCkKLmNvbG9yYW1hKCkKLmJyaWdodG5lc3MoLjQpCi5odWUoKCkgPT4gTWF0aC5zaW4odGltZS84KSkKLmJsZW5kKG8wLC40KQoucG9zdGVyaXplKDQpCi5tb2R1bGF0ZShvc2MoKSwuMDAwNSkKLm91dChvMCk=)

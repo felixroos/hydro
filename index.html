@@ -933,19 +933,40 @@
         input.value = initialShader;
         window.codestyle = (attr, value) => (input.style[attr] = value);
         let examples;
-        window.shuffle = async () => {
+        let loadExamples = async () => {
           if (!examples) {
             let res = await fetch(
               "https://raw.githubusercontent.com/hydra-synth/hydra/main/src/stores/examples.json"
             );
             examples = await res.json();
           }
-          const example = examples[Math.floor(Math.random() * examples.length)];
-          console.log("shuffle:", example.sketch_id);
+          return examples;
+        };
+        let runExample = (example) => {
+          console.log("run example", example);
           const code = parseCode(example.code);
           input.value = code;
           window.location.hash = "#" + hashCode(code);
           evaluate(code);
+        };
+        window.shuffle = async () => {
+          let examples = await loadExamples();
+          const example = examples[Math.floor(Math.random() * examples.length)];
+          runExample(example);
+        };
+        window.example = async (index = 0) => {
+          let examples = await loadExamples();
+          if (index < 0 || index > examples.length - 1) {
+            throw new Error(
+              `example(${index}) out of range. valid range: 0-${
+                examples.length - 1
+              }`
+            );
+          }
+          const example = examples[index];
+          runExample(example);
+          // not working
+          // example(55) : n is not a function
         };
 
         // vertex shader
