@@ -2,18 +2,18 @@
 
 This is an experiment that tries to implement a minimal [hydra](https://github.com/hydra-synth/hydra-synth) in a single self-contained HTML file. The GLSL compiler is implemented with a stripped down version of [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core).
 
-live at [felixroos.github.io/schattenspiel/hydro](https://felixroos.github.io/schattenspiel/hydro/)
+live at [felixroos.github.io/hydro](https://felixroos.github.io/hydro/)
 
 ## Examples
 
 To load a random example, open the browser console and enter `shuffle()`.
 You can also load some of my own examples:
 
-- [dragon tails](https://felixroos.github.io/schattenspiel/hydro/#c2hhcGUoMiwgKCkgPT4gTWF0aC5zaW4odGltZSkvNCsuMjUsIC41KQoucmVwZWF0KDEsNSkKLmNvbG9yKC42LDAsLjgpCi5tb2R1bGF0ZShub2lzZSgyLC4zKSwuMDUpCi8vLm1vZHVsYXRlUm90YXRlKG5vaXNlKDEwLC4zKSwuMikKLnJvdGF0ZSgxLjUsMC4xKQouY29sb3JhbWEoKQouZGlmZihvMCkKLmNvbG9yYW1hKCkKLmJyaWdodG5lc3MoLjQpCi5odWUoKCkgPT4gTWF0aC5zaW4odGltZS84KSkKLmJsZW5kKG8wLC40KQoucG9zdGVyaXplKDQpCi5tb2R1bGF0ZShvc2MoKSwuMDAwNSkKLm91dChvMCk=)
-- [nyan worm](https://felixroos.github.io/schattenspiel/hydro/#c2hhcGUoNDAsLjEsLjIpCi5yZXBlYXQoNCwgNCkKLm1vZHVsYXRlKG5vaXNlKDIsLjUpLC4wOCkKLnJvdGF0ZSgwLC4xKQouZGlmZihzcmMobzApLC45OSkKLmNvbG9yYW1hKCkKLmJsZW5kKHNyYyhvMCksLjQpCi5waXhlbGF0ZSgyNTYsMjU2KQoub3V0KG8wKTs=)
-- [jelly fountain](https://felixroos.github.io/schattenspiel/hydro/#c3JjKG8wKS5ibGVuZChzcmMobzApKQoubW9kdWxhdGUobm9pc2UoOCksMC4wMDUpCi5ibGVuZChzaGFwZSgzLC4zLC4zKSwwLjAxKQoucm90YXRlKDAuMDEpCi5jb2xvcmFtYSgpCi5vdXQobzAp)
-- [comic eye soup](https://felixroos.github.io/schattenspiel/hydro/#b3NjKDIwLC4xLDIpCi5tb2R1bGF0ZShub2lzZSgzKSwwLjI1KQoudGhyZXNoKC40KQoubW9kdWxhdGUob3NjKDEwKS5yb3RhdGUoTWF0aC5QSS8yKSwuNykKLm1vZHVsYXRlS2FsZWlkKG5vaXNlKDQpKQoub3V0KCk=)
-- [floaty shards](https://felixroos.github.io/schattenspiel/hydro/#CnNyYyhvMCkKLmJsZW5kKHNoYXBlKDMpLnNjYWxlKDIpLmNvbG9yKDAsLjksLjUpKQoubW9kdWxhdGUodm9yb25vaSgzKSwuNSkKLm1vZHVsYXRlU2NhbGUob3NjKDEwKSwuMSkKLm1vZHVsYXRlUm90YXRlKG9zYygxMCksLjEpCi8vLmNvbG9yYW1hKCkKLm91dChvMCk=)
+- [dragon tails](https://felixroos.github.io/hydro/#c2hhcGUoMiwgKCkgPT4gTWF0aC5zaW4odGltZSkvNCsuMjUsIC41KQoucmVwZWF0KDEsNSkKLmNvbG9yKC42LDAsLjgpCi5tb2R1bGF0ZShub2lzZSgyLC4zKSwuMDUpCi8vLm1vZHVsYXRlUm90YXRlKG5vaXNlKDEwLC4zKSwuMikKLnJvdGF0ZSgxLjUsMC4xKQouY29sb3JhbWEoKQouZGlmZihvMCkKLmNvbG9yYW1hKCkKLmJyaWdodG5lc3MoLjQpCi5odWUoKCkgPT4gTWF0aC5zaW4odGltZS84KSkKLmJsZW5kKG8wLC40KQoucG9zdGVyaXplKDQpCi5tb2R1bGF0ZShvc2MoKSwuMDAwNSkKLm91dChvMCk=)
+- [nyan worm](https://felixroos.github.io/hydro/#c2hhcGUoNDAsLjEsLjIpCi5yZXBlYXQoNCwgNCkKLm1vZHVsYXRlKG5vaXNlKDIsLjUpLC4wOCkKLnJvdGF0ZSgwLC4xKQouZGlmZihzcmMobzApLC45OSkKLmNvbG9yYW1hKCkKLmJsZW5kKHNyYyhvMCksLjQpCi5waXhlbGF0ZSgyNTYsMjU2KQoub3V0KG8wKTs=)
+- [jelly fountain](https://felixroos.github.io/hydro/#c3JjKG8wKS5ibGVuZChzcmMobzApKQoubW9kdWxhdGUobm9pc2UoOCksMC4wMDUpCi5ibGVuZChzaGFwZSgzLC4zLC4zKSwwLjAxKQoucm90YXRlKDAuMDEpCi5jb2xvcmFtYSgpCi5vdXQobzAp)
+- [comic eye soup](https://felixroos.github.io/hydro/#b3NjKDIwLC4xLDIpCi5tb2R1bGF0ZShub2lzZSgzKSwwLjI1KQoudGhyZXNoKC40KQoubW9kdWxhdGUob3NjKDEwKS5yb3RhdGUoTWF0aC5QSS8yKSwuNykKLm1vZHVsYXRlS2FsZWlkKG5vaXNlKDQpKQoub3V0KCk=)
+- [floaty shards](https://felixroos.github.io/hydro/#CnNyYyhvMCkKLmJsZW5kKHNoYXBlKDMpLnNjYWxlKDIpLmNvbG9yKDAsLjksLjUpKQoubW9kdWxhdGUodm9yb25vaSgzKSwuNSkKLm1vZHVsYXRlU2NhbGUob3NjKDEwKSwuMSkKLm1vZHVsYXRlUm90YXRlKG9zYygxMCksLjEpCi8vLmNvbG9yYW1hKCkKLm91dChvMCk=)
 
 ## Completeness
 
