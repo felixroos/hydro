@@ -4,6 +4,12 @@ This is an experiment that tries to implement a minimal [hydra](https://github.c
 
 live at [felixroos.github.io/hydro](https://felixroos.github.io/hydro/)
 
+## Why?
+
+I did this mainly to learn more about how WebGL works, as a continuation of [schattenspiel](https://github.com/felixroos/schattenspiel).
+The hydra DSL seemed to be a good fit to implement with my graph compiler [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core).
+Also, it seemed like a nice challenge to try to do this in a single HTML file, which is very sharable and readable / editable.
+
 ## Examples
 
 - To load a random example, open the browser console and enter `shuffle()`.
@@ -19,10 +25,10 @@ You can also load some of my own examples:
 
 ## Completeness
 
-Not all hydra functions / features work, and probably never will, as this is mostly an experiment out of curiosity.
-The initial goal was to see if @kabelsalat/core could be used to compile an existing DSL that also targets another language (GLSL) + another domain (visual). It seems to work out nicely for the moment.
+All [documented](https://hydra.ojack.xyz/api/) hydra functions / features work, except the external sources and some synth settings.
+The initial goal was to see if [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core) could be used to compile an existing DSL that also targets another language (GLSL) + another domain (visual). It seems to work out nicely for the moment. I might implement the remaining features in the future, just for completeness sake.
 
-Here's a feature list anyway (based on [Hydra Functions](https://hydra.ojack.xyz/api/)):
+Here's the full list:
 
 ### Language Features
 
@@ -130,3 +136,7 @@ Here's a feature list anyway (based on [Hydra Functions](https://hydra.ojack.xyz
 - [ ] init
 - [ ] initStream
 - [ ] initScreen
+
+## Git History
+
+More git history can be found in the [schattenspiel repo](https://github.com/felixroos/schattenspiel).
