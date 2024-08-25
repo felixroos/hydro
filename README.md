@@ -12,8 +12,8 @@ Also, it seemed like a nice challenge to try to do this in a single HTML file, w
 
 ## Examples
 
-- To load a random example, open the browser console and enter `shuffle()`.
-- To load a specific example, open the browser console and enter `example(index)`, where `index` is between 0 and 57.
+- To load a random example, open the browser console and enter `shuffle()`
+- To load a specific example, open the browser console and enter `example(index)`
 
 You can also load some of my own examples:
 
@@ -28,7 +28,9 @@ You can also load some of my own examples:
 All [documented](https://hydra.ojack.xyz/api/) hydra functions / features work, except the external sources and some synth settings.
 The initial goal was to see if [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core) could be used to compile an existing DSL that also targets another language (GLSL) + another domain (visual). It seems to work out nicely for the moment. I might implement the remaining features in the future, just for completeness sake.
 
-Here's the full list:
+Be aware that this project is very new and likely to contain bugs.
+
+Here's a list of implementated features:
 
 ### Language Features
 
