@@ -98,14 +98,13 @@ Here's a feature list anyway (based on [Hydra Functions](https://hydra.ojack.xyz
 - [x] modulateRotate
 - [x] modulateHue
 
-### External Sources
+### Array
 
-- [ ] initCam
-- [ ] initImage
-- [ ] initVideo
-- [ ] init
-- [ ] initStream
-- [ ] initScreen
+- [x] fast
+- [x] smooth
+- [x] ease
+- [x] offset
+- [x] fit
 
 ### Synth Settings
 
@@ -121,10 +120,11 @@ Here's a feature list anyway (based on [Hydra Functions](https://hydra.ojack.xyz
 - [x] time
 - [x] mouse
 
-### Array
+### External Sources
 
-- [x] fast
-- [x] smooth
-- [x] ease
-- [x] offset
-- [x] fit
+- [ ] initCam
+- [ ] initImage
+- [ ] initVideo
+- [ ] init
+- [ ] initStream
+- [ ] initScreen
