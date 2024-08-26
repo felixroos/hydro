@@ -97,31 +97,6 @@
         return fn(this);
       };
 
-      // TODO: dedupe with dfs
-      function visit(node, visited = []) {
-        visited.push(node);
-        node.ins.forEach((child) => {
-          if (!visited.includes(child)) {
-            visit(child, visited);
-          }
-        });
-        return visited;
-      }
-
-      function flatten(node) {
-        const flat = visit(node);
-        return flat.map((node) => {
-          let clone = {
-            ...node,
-            type: node.type,
-            ins: node.ins.map((child) => flat.indexOf(child) + ""),
-          };
-          node.value !== undefined && (clone.value = node.value);
-          node.to !== undefined && (clone.to = flat.indexOf(node.to));
-          return clone;
-        });
-      }
-
       Node.prototype.dfs = function (fn, visited) {
         return this.apply((node) => dfs(node, fn, visited));
       };
@@ -137,6 +112,24 @@
         });
         return node;
       };
+
+      function flatten(node) {
+        const flat = [];
+        dfs(node, (node) => {
+          flat.push(node);
+          return node;
+        });
+        return flat.map((node) => {
+          let clone = {
+            ...node,
+            type: node.type,
+            ins: node.ins.map((child) => flat.indexOf(child) + ""),
+          };
+          node.value !== undefined && (clone.value = node.value);
+          node.to !== undefined && (clone.to = flat.indexOf(node.to));
+          return clone;
+        });
+      }
 
       function compile(node, options = {}) {
         const {
