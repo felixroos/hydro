@@ -1,27 +1,65 @@
-<html style="height: 100%; width: 100%">
+<html>
   <head>
     <title>hydro</title>
-  </head>
-  <body style="height: 100%; width: 100%; margin: 0; background-color: black">
-    <textarea
-      id="code"
-      style="
-        background-color: transparent;
-        width: 100%;
-        height: 100%;
+    <style>
+      canvas {
         position: fixed;
         top: 0;
         left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: black;
+        overflow: auto;
+        height: 100%;
+        width: 100%;
+      }
+      .textarea-wrapper {
+        position: relative;
+        font-family: monospace;
+        display: flex;
+      }
+      .aligned {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 1.3em;
+        overflow: hidden;
+        font-size: 20px;
+        width: 100%;
+      }
+      #code {
+        z-index: 2;
+        background-color: transparent;
         border: 0;
         outline: none;
-        padding: 10px;
         resize: none;
         color: white;
-        font-size: 16px;
-      "
-      spellcheck="false"
-    ></textarea>
-    <canvas id="canvas" style="width: 100%; height: 100%"></canvas>
+        overflow: hidden;
+        height: 100%;
+      }
+
+      #highlighted-text {
+        color: transparent;
+        z-index: 1;
+        white-space: pre-wrap;
+      }
+      #highlighted-text > span {
+        background-color: #00000090;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="textarea-wrapper">
+      <div id="highlighted-text" class="aligned"></div>
+      <textarea id="code" class="aligned" spellcheck="false"></textarea>
+    </div>
+    <canvas id="canvas"></canvas>
     <script>
       "use strict";
 
@@ -923,7 +961,18 @@
       function main() {
         // set up code input
         const input = document.querySelector("#code");
+        const wrapper = document.querySelector(".textarea-wrapper");
+        const highlightedText = document.querySelector("#highlighted-text");
+        function updateLineBackground() {
+          const lines = input.value.split("\n");
+          highlightedText.innerHTML = `<span>${lines.join(
+            "</span>\n<span>"
+          )}</span>`;
+          wrapper.style.height = highlightedText.clientHeight;
+        }
+        document.body.onclick = () => input.focus();
         input.value = initialShader;
+        updateLineBackground();
         window.codestyle = (attr, value) => (input.style[attr] = value);
         let examples;
         let loadExamples = async () => {
@@ -939,6 +988,7 @@
           console.log("run example", example);
           const code = parseCode(example.code);
           input.value = code;
+          updateLineBackground();
           window.location.hash = "#" + hashCode(code);
           evaluate(code);
         };
@@ -1540,6 +1590,7 @@ void main() {
             window.location.hash = "#" + hashCode(input.value);
           }
         });
+        input.addEventListener("input", () => updateLineBackground());
       }
 
       class Pen {
