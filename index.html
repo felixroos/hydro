@@ -967,7 +967,7 @@
           const lines = input.value.split("\n");
           highlightedText.innerHTML = `<span>${lines.join(
             "</span>\n<span>"
-          )}</span>`;
+          )}</span> `;
           wrapper.style.height = highlightedText.clientHeight;
         }
         document.body.onclick = () => input.focus();
