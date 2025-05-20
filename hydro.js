@@ -1,4 +1,4 @@
-export let H = {};
+const H = {};
 
 // what follows is a trimmed down version of kabelsalat/core
 class Node {
@@ -1192,7 +1192,12 @@ vec4 src(vec2 _st, sampler2D tex) {
 }
 `;
 
-H.init = (canvas = H.canvas) => {
+const loaded = new Promise((resolve) => {
+  window.onload = resolve;
+});
+
+H.init = async (canvas = H.canvas) => {
+  await loaded; // to make sure document.body is there
   if (!canvas) {
     canvas = document.createElement("canvas");
     canvas.id = "hydro";
@@ -1233,7 +1238,7 @@ H.init = (canvas = H.canvas) => {
 };
 H.evaluate = async (hydroCode, canvas) => {
   if (!H.ready) {
-    H.init(canvas);
+    await H.init(canvas);
   }
   H.toRender = H.o0; // reset default output (in case you're removing "render" call)
   // fragment shader

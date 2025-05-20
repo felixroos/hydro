@@ -12,12 +12,11 @@ Also, it seemed like a nice challenge to try to do this in a single HTML file, w
 
 ## Usage
 
-1. copy `hydro.js` into a folder
-2. create `index.html` and add this:
+copy paste this html:
 
 ```html
-<script type="module">
-  import { H } from "./hydro.js";
+<script src="https://felixroos.github.io/hydro/hydro.js"></script>
+<script>
   H.evaluate(`noise().out()`);
 </script>
 ```
