@@ -1,6 +1,6 @@
 # hydro
 
-This is an experiment that tries to implement a minimal [hydra](https://github.com/hydra-synth/hydra-synth) in a single self-contained HTML file. The GLSL compiler is implemented with a stripped down version of [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core).
+This is an experiment that tries to implement a minimal [hydra](https://github.com/hydra-synth/hydra-synth) in a single self-contained JS file. The GLSL compiler is implemented with a stripped down version of [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core).
 
 live at [felixroos.github.io/hydro](https://felixroos.github.io/hydro/)
 
@@ -9,6 +9,25 @@ live at [felixroos.github.io/hydro](https://felixroos.github.io/hydro/)
 I did this mainly to learn more about how WebGL works, as a continuation of [schattenspiel](https://github.com/felixroos/schattenspiel).
 The hydra DSL seemed to be a good fit to implement with my graph compiler [@kabelsalat/core](https://github.com/felixroos/kabelsalat/tree/main/packages/core).
 Also, it seemed like a nice challenge to try to do this in a single HTML file, which is very sharable and readable / editable.
+
+## Usage
+
+1. copy `hydro.js` and `shaders.glsl` into a folder
+2. create `index.html` and add this:
+
+```html
+<script type="module">
+  import { H } from "./hydro.js";
+  H.evaluate(`noise().out()`);
+</script>
+```
+
+you can also pass a canvas as the second argument of evaluate:
+
+```js
+const canvas = document.querySelector("#my-canvas");
+H.evaluate(`noise().out()`, canvas);
+```
 
 ## Examples
 
