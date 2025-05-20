@@ -1,6 +1,10 @@
 <html>
   <head>
     <title>hydro</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💧</text></svg>"
+    />
     <style>
       canvas {
         position: fixed;
@@ -59,8 +63,8 @@
       <div id="highlighted-text" class="aligned"></div>
       <textarea id="code" class="aligned" spellcheck="false"></textarea>
     </div>
-    <script type="module">
-      import { H } from "./hydro.js";
+    <script src="./hydro.js"></script>
+    <script>
       async function main() {
         // set up code input
         const input = document.querySelector("#code");
