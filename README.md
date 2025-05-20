@@ -12,7 +12,7 @@ Also, it seemed like a nice challenge to try to do this in a single HTML file, w
 
 ## Usage
 
-1. copy `hydro.js` and `shaders.glsl` into a folder
+1. copy `hydro.js` into a folder
 2. create `index.html` and add this:
 
 ```html
